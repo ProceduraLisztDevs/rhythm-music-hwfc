@@ -1,0 +1,40 @@
+
+
+#root {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    padding: 50px;
+    width: fit-content;
+}
+
+.elements-container {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.element {
+    display: flex;
+    width: 1em;
+    height: 2em;
+    border-radius: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.element.even {
+    background-color: rgba(0, 0, 0, 50%);
+}
+
+.element.odd {
+    background-color: rgba(34, 34, 34, 50%);
+}
+
+.element.selected {
+    background-color: red !important
+}
