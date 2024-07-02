@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useAppContext } from "../AppState"
 import { buttonStyles } from "../styles"
-import { MeasureTypeInit, nameOfMeasure, MeasureIR } from "../music_theory/Rhythm"
+import { MeasureTypeInit, nameOfMeasure } from "../music_theory/Rhythm"
 import { RhythmConfig } from "./RhythmConfig"
 
 export function RhythmPage () {

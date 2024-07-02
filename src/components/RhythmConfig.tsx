@@ -1,7 +1,7 @@
 import { useAppContext } from "../AppState"
 import Select from "react-select"
 import { selectStyles } from "../styles"
-import { RhythmUnit, MeasureTypeInit, generateRhythmPattern, MeasureIR} from "../music_theory/Rhythm"
+import { RhythmUnit, generateRhythmPattern, MeasureIR} from "../music_theory/Rhythm"
 import { useState } from "react"
 
 interface RhythmConfigProps {

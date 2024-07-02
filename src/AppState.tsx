@@ -11,8 +11,7 @@ import { ChordPrototypeIR, ChordesqueIR, nameOfChordPrototypeIR } from "./wfc/hi
 import { NoteOutput } from "./components/MidiPlayer"
 import { SectionIR, SectionInit, nameOfSectionIR } from "./wfc/hierarchy/Section"
 import { InfiniteArray } from "./wfc/InfiniteArray"
-import { Measure, MeasureIR, RhythmPattern } from "./music_theory/Rhythm"
-import { RhythmStrategy } from "./components/RhythmSettings"
+import { MeasureIR, RhythmPattern } from "./music_theory/Rhythm"
 
 export interface PassiveAppState {
 	bpm: number;

@@ -14,7 +14,7 @@ interface RhythmBoxProps {
 }
 
 export function RhythmBox ({numberOfUnits}: RhythmBoxProps) {
-  const [selectionBox, setSelectionBox] = useState<Box>();
+  const [_selectionBox, setSelectionBox] = useState<Box>();
   const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
   const [selectableItems, setSelectableItems] = useState<Box[]>([]);
   const elementsContainerRef = useRef<HTMLDivElement | null>(null);

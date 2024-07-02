@@ -11,7 +11,6 @@ import { ChordPrototypesPage } from "./components/ChordPrototypesPage"
 import { SectionsPage } from "./components/SectionsPage"
 import { SectionTiles } from "./components/SectionTiles"
 import { Configs } from "./components/Configs"
-import { RhythmPage } from "./components/RhythmPage"
 import { RhythmSettings } from "./components/RhythmSettings"
 
 function App() {

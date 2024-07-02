@@ -40,14 +40,10 @@ const lowerOptions = [
 
 
 function RhythmSettingsInner() {
-	const { customMeasures: measures,
+	const { 
 		minNumNotes,
 		setMinNumNotes,
 		melodyLength,
-		startOnNote,
-		setStartOnNote,
-		maxRestLength,
-		setMaxRestLength,
 		upper,
 		lower,
 		setUpper,

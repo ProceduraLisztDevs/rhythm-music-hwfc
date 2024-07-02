@@ -1,5 +1,3 @@
-import { Random } from "../util/Random"
-
 export type RhythmUnit = {
 	duration: number
 	type: "note" | "rest" | undefined
@@ -57,10 +55,6 @@ export function nameOfMeasure (measure: MeasureIR): string {
 
 export function generateRhythm (
 	{
-		minimumNumberOfUnits = 1,
-		onlyStartOnNote,
-		minimumNumberOfNotes,
-		maximumRestLength,
 		upper = 4,
 		lower = 4,
 		baseRhythm
@@ -122,7 +116,7 @@ function getRandomNoteLengths(possibleNotes: number[], strongBeats: number[], ba
     let result = new Array<RhythmUnit>
     let currentSum = 0
 
-	baseRhythm.forEach((unit, index) => {
+	baseRhythm.forEach((unit, _index) => {
 		if (unit.type == undefined) {
 			// fill out
 			result = [...result, ...fillGap(currentSum, currentSum + unit.duration, possibleNotes, strongBeats)]
@@ -187,14 +181,6 @@ function probabilityOfNoteOnBeat(noteLength: number, onStrongBeat: boolean) {
 		return 10
 }	
 
-function probabilityOfRest(condition: boolean) {
-    if (condition)
-		return 10
-	else
-		return 30
-}	
-
-
 export function generateRhythmPattern (
 	upper: number,
 	lower: number,
@@ -222,37 +208,11 @@ export function generateRhythmPattern (
 	return rhythm
 }
 
-function addRests (
-	notes: number[],
-	numOfRests: number
-): RhythmPattern {
-	let result = new Array<RhythmUnit>
-	let restIndices = []
-	let pool = notes.map((_, i) => i)
-
-    while (restIndices.length < numOfRests) {
-        let pick = Math.floor(Math.random() * pool.length)
-		
-		restIndices.push(pick)
-		pool.splice(pool.indexOf(pick), 1)
-    }
-	
-	for (let i = 0; i < notes.length; i++) {
-		if (i in restIndices)
-			result.push({ duration: notes[i], type: "rest" } as RhythmUnit)
-		else
-			result.push({ duration: notes[i], type: "note" } as RhythmUnit)
-	}
-	return result
-}
-
 function durationToRhythm (
 	notes: number[]
 ): RhythmPattern {
 	let res = new Array<RhythmUnit>
 	for (let i = 0; i < notes.length; i++) {
-		let pick = Math.random()
-		let noteLength = notes[i]
 		res.push({ duration: notes[i], type: "note" } as RhythmUnit)
 		// if (noteLength === 1.5 || noteLength === 0.75 || (i > 0 && res[i-1].type == "rest")){
 		// 	res.push({ duration: notes[i], type: "note" } as RhythmUnit)
